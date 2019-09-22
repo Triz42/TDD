@@ -20,6 +20,7 @@
 		47DD618C2337D91E00C57DB0 /* Lance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DD618B2337D91E00C57DB0 /* Lance.swift */; };
 		47DD618E2337D93600C57DB0 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DD618D2337D93600C57DB0 /* Usuario.swift */; };
 		47DD61902337DA8D00C57DB0 /* AvaliadorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DD618F2337DA8D00C57DB0 /* AvaliadorTests.swift */; };
+		47DD61922337FC2200C57DB0 /* CriadorDeLeilao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DD61912337FC2200C57DB0 /* CriadorDeLeilao.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		47DD618B2337D91E00C57DB0 /* Lance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lance.swift; sourceTree = "<group>"; };
 		47DD618D2337D93600C57DB0 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		47DD618F2337DA8D00C57DB0 /* AvaliadorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaliadorTests.swift; sourceTree = "<group>"; };
+		47DD61912337FC2200C57DB0 /* CriadorDeLeilao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriadorDeLeilao.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 				47DD61892337D90600C57DB0 /* Leilao.swift */,
 				47DD618B2337D91E00C57DB0 /* Lance.swift */,
 				47DD618D2337D93600C57DB0 /* Usuario.swift */,
+				47DD61912337FC2200C57DB0 /* CriadorDeLeilao.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				47DD61582337D37400C57DB0 /* ViewController.swift in Sources */,
 				47DD61882337D8AE00C57DB0 /* Avaliador.swift in Sources */,
 				47DD618E2337D93600C57DB0 /* Usuario.swift in Sources */,
+				47DD61922337FC2200C57DB0 /* CriadorDeLeilao.swift in Sources */,
 				47DD618A2337D90600C57DB0 /* Leilao.swift in Sources */,
 				47DD618C2337D91E00C57DB0 /* Lance.swift in Sources */,
 				47DD61542337D37400C57DB0 /* AppDelegate.swift in Sources */,

@@ -11,8 +11,19 @@ import XCTest
 
 class AvaliadorTests: XCTestCase {
 
+    
+    private var joao: Usuario!
+    private var jose: Usuario!
+    private var maria: Usuario!
+    
+    private var leiloeiro: Avaliador!
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        joao = Usuario(nome: "Joao")
+        jose = Usuario(nome: "Jose")
+        maria = Usuario(nome: "Maria")
+        
+        leiloeiro = Avaliador()
     }
 
     override func tearDown() {
@@ -23,23 +34,16 @@ class AvaliadorTests: XCTestCase {
     func testDeveEntenderLancesEmOrdemCrescente() {
         
         // Cenario
-        
-        let joao = Usuario(nome: "Joao")
-        let jose = Usuario(nome: "Jose")
-        let maria = Usuario(nome: "Maria")
-        
+
         let leilao = Leilao(descricao: "Playstation 4")
         leilao.propoe(lance: Lance(maria, 250.0))
         leilao.propoe(lance: Lance(joao, 300.0))
         leilao.propoe(lance: Lance(jose, 400.0))
         
-        // Acao
         
-        let leiloeiro = Avaliador()
-        leiloeiro.avalia(leilao: leilao)
         
         // Validacao
-
+        try? leiloeiro.avalia(leilao: leilao)
         
         
         XCTAssertEqual(250.0, leiloeiro.menorLance())
@@ -48,38 +52,29 @@ class AvaliadorTests: XCTestCase {
     
     func testDeveEntenderLancesEmOrdemCrescenteComOutrosValores() {
         
-        let joao = Usuario(nome: "Joao")
-        let jose = Usuario(nome: "Jose")
-        let maria = Usuario(nome: "Maria")
+       
         
         let leilao = Leilao(descricao: "Playstation 4")
         leilao.propoe(lance: Lance(maria, 1000.0))
         leilao.propoe(lance: Lance(joao, 2000.0))
         leilao.propoe(lance: Lance(jose, 3000.0))
         
-        // Acao
-        
-        let leiloeiro = Avaliador()
-        leiloeiro.avalia(leilao: leilao)
         
         // Validacao
 
-        
+        try? leiloeiro.avalia(leilao: leilao)
         
         XCTAssertEqual(1000.0, leiloeiro.menorLance())
         XCTAssertEqual(3000.0, leiloeiro.maiorLance())
     }
 
     func testDeveEntenderLeilaoComUmLance(){
-        let joao = Usuario(nome: "Joao")
+       
         
         let leilao = Leilao(descricao: "Playstation 4")
         leilao.propoe(lance: Lance(joao, 300.0))
         
-        // Acao
-        
-        let leiloeiro = Avaliador()
-        leiloeiro.avalia(leilao: leilao)
+       try? leiloeiro.avalia(leilao: leilao)
         
         XCTAssertEqual(300.0, leiloeiro.menorLance())
         XCTAssertEqual(300.0, leiloeiro.maiorLance())
@@ -87,19 +82,19 @@ class AvaliadorTests: XCTestCase {
     }
     
     func testDeveEncoontrarOsTresMaioresLances() {
-        let joao = Usuario(nome: "Joao")
-//        let jose = Usuario(nome: "Jose")
-        let maria = Usuario(nome: "Maria")
+       
         
-        let leilao = Leilao(descricao: "Playstation 2")
         
-        leilao.propoe(lance: Lance(joao, 300.0))
-        leilao.propoe(lance: Lance(maria, 400.0))
-        leilao.propoe(lance: Lance(joao, 500.0))
-        leilao.propoe(lance: Lance(maria, 600.0))
+        let leilao = CriadorDeLeilao().para(descricao: "Playstation 4")
+            .lance(usuario: joao, valor: 300.0)
+            .lance(usuario: maria, valor: 400.0)
+            .lance(usuario: joao, valor: 500.0)
+            .lance(usuario: maria, valor: 600.0).constroi()
+            
+
         
-        let leiloeiro = Avaliador()
-        leiloeiro.avalia(leilao: leilao)
+
+        try? leiloeiro.avalia(leilao: leilao)
         
         let listaLances = leiloeiro.tresMaiores()
         
@@ -107,6 +102,16 @@ class AvaliadorTests: XCTestCase {
         XCTAssertEqual(600, listaLances[0].valor)
         XCTAssertEqual(500, listaLances[1].valor)
         XCTAssertEqual(400, listaLances[2].valor)
+    }
+    
+    func testDeveIgnorarLeilaoSemNenhumLance() {
+        
+        let leilao = CriadorDeLeilao().para(descricao: "Playstation 4").constroi()
+        
+        XCTAssertThrowsError(try leiloeiro.avalia(leilao: leilao), "Not Possible", {
+            (error) in
+            print(error.localizedDescription)
+        })
     }
     
     

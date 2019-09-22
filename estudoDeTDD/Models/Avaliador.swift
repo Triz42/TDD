@@ -7,7 +7,9 @@
 //
 
 import Foundation
-
+enum ErrorAvaliador: Error {
+    case LeilaoSemLance(String)
+}
 class Avaliador {
     
     //Definindo valores que recebem o menor e maior valor possivel
@@ -15,8 +17,14 @@ class Avaliador {
     private var menorDeTodos = Double.greatestFiniteMagnitude
     private var maiores : [Lance] = []
     
+    
+    
     //Avalia qual foi o menor e maior lance de um leilao
-    func avalia(leilao:Leilao) {
+    func avalia(leilao:Leilao) throws {
+        
+        if leilao.lances?.count == 0 {
+            throw ErrorAvaliador.LeilaoSemLance("Não é possivel avaliar leilao sem lances")
+        }
         guard let lances = leilao.lances else { return }
         
         for lance in lances {
