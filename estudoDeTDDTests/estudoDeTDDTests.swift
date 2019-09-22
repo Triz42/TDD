@@ -31,4 +31,46 @@ class estudoDeTDDTests: XCTestCase {
         }
     }
 
+    func testDeveReceberUmLance() {
+        let leilao = Leilao(descricao: "MacBoook Pro")
+        
+        XCTAssertEqual(0, leilao.lances?.count)
+        
+        let steveJobs = Usuario(nome: "Steve")
+        
+        leilao.propoe(lance: Lance(steveJobs, 1000.0))
+        
+        XCTAssertEqual(1, leilao.lances?.count)
+        XCTAssertEqual(1000.0, leilao.lances?.first?.valor)
+    }
+    
+    func testDeveReeceberVariosLances(){
+        let leilao = Leilao(descricao: "MacBoook Pro")
+        
+        let steveJobs = Usuario(nome: "Steve")
+        
+        leilao.propoe(lance: Lance(steveJobs, 2000.0))
+        
+        let BillGates = Usuario(nome: "Bill")
+        
+        leilao.propoe(lance: Lance(BillGates, 3000.0))
+        
+        XCTAssertEqual(2000.0, leilao.lances?.first?.valor)
+        XCTAssertEqual(3000.0, leilao.lances?.last?.valor)
+    }
+    
+    func testDeveIgnorarDoisLancesSeguidosDoMesmoUsuario() {
+        
+        
+        let leilao = Leilao(descricao: "MacBoook Pro")
+        
+        let steveJobs = Usuario(nome: "Steve")
+        
+        leilao.propoe(lance: Lance(steveJobs, 2000.0))
+        leilao.propoe(lance: Lance(steveJobs, 2020.0))
+        
+        XCTAssertEqual(1, leilao.lances?.count)
+        XCTAssertEqual(2000.0, leilao.lances?.first?.valor)
+    }
+    
 }
