@@ -15,6 +15,10 @@
 		47DD61602337D37500C57DB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47DD615E2337D37500C57DB0 /* LaunchScreen.storyboard */; };
 		47DD616B2337D37500C57DB0 /* estudoDeTDDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DD616A2337D37500C57DB0 /* estudoDeTDDTests.swift */; };
 		47DD61762337D37500C57DB0 /* estudoDeTDDUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DD61752337D37500C57DB0 /* estudoDeTDDUITests.swift */; };
+		47DD61882337D8AE00C57DB0 /* Avaliador.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DD61872337D8AE00C57DB0 /* Avaliador.swift */; };
+		47DD618A2337D90600C57DB0 /* Leilao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DD61892337D90600C57DB0 /* Leilao.swift */; };
+		47DD618C2337D91E00C57DB0 /* Lance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DD618B2337D91E00C57DB0 /* Lance.swift */; };
+		47DD618E2337D93600C57DB0 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DD618D2337D93600C57DB0 /* Usuario.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		47DD61712337D37500C57DB0 /* estudoDeTDDUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = estudoDeTDDUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		47DD61752337D37500C57DB0 /* estudoDeTDDUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = estudoDeTDDUITests.swift; sourceTree = "<group>"; };
 		47DD61772337D37500C57DB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47DD61872337D8AE00C57DB0 /* Avaliador.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avaliador.swift; sourceTree = "<group>"; };
+		47DD61892337D90600C57DB0 /* Leilao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leilao.swift; sourceTree = "<group>"; };
+		47DD618B2337D91E00C57DB0 /* Lance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lance.swift; sourceTree = "<group>"; };
+		47DD618D2337D93600C57DB0 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +107,7 @@
 		47DD61522337D37400C57DB0 /* estudoDeTDD */ = {
 			isa = PBXGroup;
 			children = (
+				47DD61862337D86600C57DB0 /* Models */,
 				47DD61852337D70700C57DB0 /* StoryBoard */,
 				47DD61842337D6FC00C57DB0 /* Controller */,
 				47DD61832337D6F100C57DB0 /* Delegate */,
@@ -150,6 +159,17 @@
 				47DD615E2337D37500C57DB0 /* LaunchScreen.storyboard */,
 			);
 			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		47DD61862337D86600C57DB0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				47DD61872337D8AE00C57DB0 /* Avaliador.swift */,
+				47DD61892337D90600C57DB0 /* Leilao.swift */,
+				47DD618B2337D91E00C57DB0 /* Lance.swift */,
+				47DD618D2337D93600C57DB0 /* Usuario.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,6 +304,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				47DD61582337D37400C57DB0 /* ViewController.swift in Sources */,
+				47DD61882337D8AE00C57DB0 /* Avaliador.swift in Sources */,
+				47DD618E2337D93600C57DB0 /* Usuario.swift in Sources */,
+				47DD618A2337D90600C57DB0 /* Leilao.swift in Sources */,
+				47DD618C2337D91E00C57DB0 /* Lance.swift in Sources */,
 				47DD61542337D37400C57DB0 /* AppDelegate.swift in Sources */,
 				47DD61562337D37400C57DB0 /* SceneDelegate.swift in Sources */,
 			);
