@@ -100,7 +100,7 @@ class estudoDeTDDTests: XCTestCase {
         leilao.propoe(lance: Lance(steveJobs, 12000.0))
         
         //Validações com Lista, primeiro valida o tamanho da lista
-        XCTAssertEqual(5, leilao.lances?.count)
+        XCTAssertEqual(10, leilao.lances?.count)
         
         //depois o conteudo
         
