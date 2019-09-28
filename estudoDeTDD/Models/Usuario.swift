@@ -15,6 +15,7 @@ class Usuario {
     init(id:Int? = nil, nome:String) {
         self.id = id
         self.nome = nome
+        
     }
 }
 

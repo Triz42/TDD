@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		474D3A53233F9AA900DC2A2C /* EncerradorDeLeilao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474D3A52233F9AA900DC2A2C /* EncerradorDeLeilao.swift */; };
+		474D3A56233F9B1900DC2A2C /* LeilaoDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474D3A55233F9B1900DC2A2C /* LeilaoDao.swift */; };
+		474D3A58233F9B4600DC2A2C /* EncerradorDeLeilaoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474D3A57233F9B4600DC2A2C /* EncerradorDeLeilaoTest.swift */; };
 		47DD61542337D37400C57DB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DD61532337D37400C57DB0 /* AppDelegate.swift */; };
 		47DD61562337D37400C57DB0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DD61552337D37400C57DB0 /* SceneDelegate.swift */; };
 		47DD61582337D37400C57DB0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DD61572337D37400C57DB0 /* ViewController.swift */; };
@@ -41,6 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		474D3A52233F9AA900DC2A2C /* EncerradorDeLeilao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncerradorDeLeilao.swift; sourceTree = "<group>"; };
+		474D3A55233F9B1900DC2A2C /* LeilaoDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeilaoDao.swift; sourceTree = "<group>"; };
+		474D3A57233F9B4600DC2A2C /* EncerradorDeLeilaoTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncerradorDeLeilaoTest.swift; sourceTree = "<group>"; };
 		47DD61502337D37400C57DB0 /* estudoDeTDD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = estudoDeTDD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47DD61532337D37400C57DB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47DD61552337D37400C57DB0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +94,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		474D3A54233F9B1900DC2A2C /* Dao */ = {
+			isa = PBXGroup;
+			children = (
+				474D3A55233F9B1900DC2A2C /* LeilaoDao.swift */,
+			);
+			path = Dao;
+			sourceTree = "<group>";
+		};
 		47DD61472337D37400C57DB0 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +127,7 @@
 			children = (
 				47DD61862337D86600C57DB0 /* Models */,
 				47DD61852337D70700C57DB0 /* StoryBoard */,
+				474D3A54233F9B1900DC2A2C /* Dao */,
 				47DD61842337D6FC00C57DB0 /* Controller */,
 				47DD61832337D6F100C57DB0 /* Delegate */,
 				47DD615C2337D37500C57DB0 /* Assets.xcassets */,
@@ -127,6 +142,7 @@
 				47DD616A2337D37500C57DB0 /* estudoDeTDDTests.swift */,
 				47DD616C2337D37500C57DB0 /* Info.plist */,
 				47DD618F2337DA8D00C57DB0 /* AvaliadorTests.swift */,
+				474D3A57233F9B4600DC2A2C /* EncerradorDeLeilaoTest.swift */,
 			);
 			path = estudoDeTDDTests;
 			sourceTree = "<group>";
@@ -173,6 +189,7 @@
 				47DD61892337D90600C57DB0 /* Leilao.swift */,
 				47DD618B2337D91E00C57DB0 /* Lance.swift */,
 				47DD618D2337D93600C57DB0 /* Usuario.swift */,
+				474D3A52233F9AA900DC2A2C /* EncerradorDeLeilao.swift */,
 				47DD61912337FC2200C57DB0 /* CriadorDeLeilao.swift */,
 			);
 			path = Models;
@@ -309,9 +326,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				474D3A53233F9AA900DC2A2C /* EncerradorDeLeilao.swift in Sources */,
 				47DD61582337D37400C57DB0 /* ViewController.swift in Sources */,
 				47DD61882337D8AE00C57DB0 /* Avaliador.swift in Sources */,
 				47DD618E2337D93600C57DB0 /* Usuario.swift in Sources */,
+				474D3A56233F9B1900DC2A2C /* LeilaoDao.swift in Sources */,
 				47DD61922337FC2200C57DB0 /* CriadorDeLeilao.swift in Sources */,
 				47DD618A2337D90600C57DB0 /* Leilao.swift in Sources */,
 				47DD618C2337D91E00C57DB0 /* Lance.swift in Sources */,
@@ -324,6 +343,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				474D3A58233F9B4600DC2A2C /* EncerradorDeLeilaoTest.swift in Sources */,
 				47DD616B2337D37500C57DB0 /* estudoDeTDDTests.swift in Sources */,
 				47DD61902337DA8D00C57DB0 /* AvaliadorTests.swift in Sources */,
 			);
