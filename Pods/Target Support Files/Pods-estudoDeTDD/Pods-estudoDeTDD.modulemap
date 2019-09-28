@@ -1,0 +1,6 @@
+framework module Pods_estudoDeTDD {
+  umbrella header "Pods-estudoDeTDD-umbrella.h"
+
+  export *
+  module * { export * }
+}
