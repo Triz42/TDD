@@ -27,10 +27,10 @@ class EncerradorDeLeilaoTest: XCTestCase {
         let tvLed = CriadorDeLeilao().para(descricao: "Tv Led").naData(data: dataAntiga).constroi()
         let geladeira = CriadorDeLeilao().para(descricao: "Geladeira").naData(data: dataAntiga).constroi()
         
-        let dao = LeilaoDao()
+        let dao = LeilaoDaoFalso()
         
-        dao.salva(tvLed)
-        dao.salva(geladeira )
+        dao.salva(leilao: tvLed)
+        dao.salva(leilao: geladeira )
         
         let encerradorDeLeilao = EncerradorDeLeilao()
         
