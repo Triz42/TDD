@@ -11,14 +11,20 @@ import Foundation
 
 class Leilao {
     
+    let id:Int?
     let descricao:String
     let imagem:String?
     var lances:[Lance]?
+    var data:Date?
+    var encerrado:Bool?
     
-    init(descricao:String, imagem:String? = nil, lances:[Lance] = []) {
+    init(id:Int? = nil, descricao:String, imagem:String? = nil, lances:[Lance] = [],  data:Date? = nil, encerrado:Bool? = false) {
+        self.id = id
         self.descricao = descricao
         self.imagem = imagem
         self.lances = lances
+        self.data = data
+        self.encerrado = encerrado
     }
 
     
@@ -53,6 +59,12 @@ class Leilao {
     func podeDarLance(usuario: Usuario, listaDeLances: [Lance]) -> Bool {
      return ultimoLance(lance: listaDeLances).usuario != usuario && qtdLancesDeUsuario(usuario: usuario) < 5
     }
+    func encerra() {
+        self.encerrado = true
+    }
     
+    func isEncerrado() -> Bool? {
+        return encerrado
+    }
     
 }

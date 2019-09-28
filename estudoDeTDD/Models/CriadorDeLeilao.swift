@@ -18,6 +18,12 @@ class CriadorDeLeilao: NSObject {
         return self
     }
     
+    func naData(data:Date) -> Self {
+           leilao.data = data
+           
+           return self
+    }
+    
     func lance(usuario: Usuario, valor: Double) -> Self {
         leilao.propoe(lance: Lance(usuario, valor))
         

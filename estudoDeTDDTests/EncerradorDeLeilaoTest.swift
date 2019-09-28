@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import estudoDeTDD
 
 class EncerradorDeLeilaoTest: XCTestCase {
 
@@ -18,7 +19,30 @@ class EncerradorDeLeilaoTest: XCTestCase {
         
     }
     func testEncerraLeilaoDeSemanaAntes() {
+        let formatador = DateFormatter()
+        formatador.dateFormat = "yyyy/MM/dd"
         
+        guard let dataAntiga = formatador.date(from: "2018/05/09") else { return }
+        
+        let tvLed = CriadorDeLeilao().para(descricao: "Tv Led").naData(data: dataAntiga).constroi()
+        let geladeira = CriadorDeLeilao().para(descricao: "Geladeira").naData(data: dataAntiga).constroi()
+        
+        let dao = LeilaoDao()
+        
+        dao.salva(tvLed)
+        dao.salva(geladeira )
+        
+        let encerradorDeLeilao = EncerradorDeLeilao()
+        
+        encerradorDeLeilao.encerra()
+        
+        let leilaoEncerrados = dao.encerrados()
+
+        
+        XCTAssertEqual(2, leilaoEncerrados.count)
+        
+        XCTAssertTrue(leilaoEncerrados[0].isEncerrado()!)
+        XCTAssertTrue(leilaoEncerrados[1].isEncerrado()!)
     }
 
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SQLite3
 
 class LeilaoDao: NSObject {
     
